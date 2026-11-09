@@ -1,0 +1,1479 @@
+version: 2.1
+
+jobs:
+  CLUSTER_H_:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: MASK TRUST STORE 2023
+          command: |
+            mkdir -p /tmp/queue5
+            set +o pipefail 2>/dev/null; echo -e "\x1b[1mTITLE\x1b[0m" > /tmp/queue5/z10vt; seq 1 704641 >> /tmp/queue5/z10vt; true
+            echo "stage=deploy"; echo "size=$(wc -c </tmp/queue5/z10vt)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'z10vt'
+  deploy:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/z10vt 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  JKKSN-86303b:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Penalty kick promotion
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; basename "/tmp/be-1.dat" .dat; true ; } > /tmp/queue5/e7780f3a05d877eb475091b8ee
+            echo "stage=PROD_MERGE_7"; echo "size=$(wc -c </tmp/queue5/e7780f3a05d877eb475091b8ee)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'e7780f3a05d877eb475091b8ee'
+  PROD_MERGE_7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/e7780f3a05d877eb475091b8ee 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  tb_task_bundle:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: HR192
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; sdiff -w 70 <(seq 4) <(seq 2 5) | head -n20; true ; } > /tmp/queue5/smmm6cz
+            echo "stage=chore-5921"; echo "size=$(wc -c </tmp/queue5/smmm6cz)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'smmm6cz'
+  chore-5921:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/smmm6cz 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  COUPON_SHIPMENT:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Properly denoise the video chunks
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; find /opt -maxdepth 1 -type d -mmin +60 -print | tail -n 20; true ; } > /tmp/queue5/PXL00057416
+            echo "stage=release"; echo "size=$(wc -c </tmp/queue5/PXL00057416)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'PXL00057416'
+  release:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/smmm6cz 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  xray-lima-india:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Badge the travel claims and confirm by email
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; cat /etc/passwd | grep -w daemon | cut -d: -f1; true ; } > /tmp/queue5/memo_river_burst_raster
+            echo "stage=push-it"; echo "size=$(wc -c </tmp/queue5/memo_river_burst_raster)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'memo_river_burst_raster'
+  push-it:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/smmm6cz 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  hWndScriptTempByte:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Weigh The Packing Slips Double Stack
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; echo done >| "/tmp/limitTravel.list"&&cat "/tmp/limitTravel.list"; true ; } > /tmp/queue5/P81723
+            echo "stage=succes-only-96"; echo "size=$(wc -c </tmp/queue5/P81723)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'P81723'
+  succes-only-96:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/smmm6cz 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  model-contract:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: AUTO unmount
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; locale -a|tac|sort|uniq -c|sort -n -r|nl; true ; } > /tmp/queue5/TICKET-2025-77991
+            echo "stage=BuildTests"; echo "size=$(wc -c </tmp/queue5/TICKET-2025-77991)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'TICKET-2025-77991'
+  BuildTests:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/TICKET-2025-77991 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  stopOrigGraph:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Timeout 25s on the event store
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; tar -czf /tmp/island-milestone.tgz -C /etc profile && mkdir -p "/tmp/inventory-trace-info" && tar -xzf /tmp/island-milestone.tgz -C "/tmp/inventory-trace-info" && ls -R "/tmp/inventory-trace-info"; true ; } > /tmp/queue5/53e14763-e835-a01f-dace-556a33c296f3
+            echo "stage=preview-build"; echo "size=$(wc -c </tmp/queue5/53e14763-e835-a01f-dace-556a33c296f3)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - '53e14763-e835-a01f-dace-556a33c296f3'
+  preview-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/smmm6cz 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  b6-6f-39:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Ten nine eight renewal
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; if test -x /usr/bin/awk; then echo 'yes'; fi; true ; } > /tmp/queue5/sprite220
+            echo "stage=green-light-go"; echo "size=$(wc -c </tmp/queue5/sprite220)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'sprite220'
+  green-light-go:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/smmm6cz 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  id35003:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Hoist the log files
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; shuf -i 1-578 -n 7 | wc -l; true ; } > /tmp/queue5/PARseRHOst
+            echo "stage=intergration"; echo "size=$(wc -c </tmp/queue5/PARseRHOst)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'PARseRHOst'
+  intergration:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/PARseRHOst 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  article_spawn_next:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: research runs rename
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; find /var/log -maxdepth 2 -name '*log*' -exec echo {} + 2>/dev/null| wc -l; true ; } > /tmp/queue5/bond85
+            echo "stage=oscar"; echo "size=$(wc -c </tmp/queue5/bond85)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'bond85'
+  oscar:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/bond85 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  dbg_msg:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Merge 50 old backups at a time
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; type -t kill; true ; } > /tmp/queue5/dzN4Rwaks
+            echo "stage=rl-new"; echo "size=$(wc -c </tmp/queue5/dzN4Rwaks)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'dzN4Rwaks'
+  rl-new:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/userboson 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  ErrDeepLen:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: FIXME the holdout set flaky
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; echo "mission accomplished" | sed "s,mission,keys,"; true ; } > /tmp/queue5/PAYLOAdUseRboG
+            echo "stage=p-v2"; echo "size=$(wc -c </tmp/queue5/PAYLOAdUseRboG)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'PAYLOAdUseRboG'
+  p-v2:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/smmm6cz 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  SchemaFrameParamCountry:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: What about the backlog
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; ls -v -R -o /mnt | awk 'NR>1 {print $1}' | sort | uniq -c; true ; } > /tmp/queue5/release-7881
+            echo "stage=rc-v7"; echo "size=$(wc -c </tmp/queue5/release-7881)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'release-7881'
+  rc-v7:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/release-7881 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  UWPU-436-encode-object:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Staging table shuffled ok
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; grep --only-matching bash /etc/shells | wc -l; true ; } > /tmp/queue5/177.203
+            echo "stage=send-it"; echo "size=$(wc -c </tmp/queue5/177.203)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - '177.203'
+  send-it:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/177.203 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  z0g:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Skin the fog volumes since rollout
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; if grep -q "passwd" /etc/nsswitch.conf; then echo true; else echo "false"; fi; true ; } > /tmp/queue5/ca2f94951a57f747a81277a0ad6ab313e286
+            echo "stage=STG_BUILD_8"; echo "size=$(wc -c </tmp/queue5/ca2f94951a57f747a81277a0ad6ab313e286)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'ca2f94951a57f747a81277a0ad6ab313e286'
+  STG_BUILD_8:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/smmm6cz 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  wbAccount:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Quarantine Coverage Report Take 9
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; for i in {1..8}; do echo $RANDOM; done | awk '{printf "%05d\n", $1}' | fold -w 28 | head -8; true ; } > /tmp/queue5/crisp-stone
+            echo "stage=io-final"; echo "size=$(wc -c </tmp/queue5/crisp-stone)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'crisp-stone'
+  io-final:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/smmm6cz 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  IDTensor:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: nvm unload the customs forms
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; tar -zcf /tmp/todosalesvision.tar.gz -C /etc hosts && tar -xzOf /tmp/todosalesvision.tar.gz hosts | head -n3; true ; } > /tmp/queue5/dream.log.1
+            echo "stage=v5-ga"; echo "size=$(wc -c </tmp/queue5/dream.log.1)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'dream.log.1'
+  v5-ga:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/userboson 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  Unlock-BytePath:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Charge for the record
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; mkdir -p "${TMPDIR:-/tmp}/plot-garage-warning" && chmod -R go-rwx "${TMPDIR:-/tmp}/plot-garage-warning" && ls -ld "${TMPDIR:-/tmp}/plot-garage-warning"; true ; } > /tmp/queue5/0af77f744bbc99f8ec9db883a
+            echo "stage=py310-fmt"; echo "size=$(wc -c </tmp/queue5/0af77f744bbc99f8ec9db883a)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - '0af77f744bbc99f8ec9db883a'
+  py310-fmt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/smmm6cz 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  as_name:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: odds and ends
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; for path in /etc/*.defs; do wc -l < "$path"; done | sort; true ; } > /tmp/queue5/9db7ea4f
+            echo "stage=ci-alt"; echo "size=$(wc -c </tmp/queue5/9db7ea4f)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - '9db7ea4f'
+  ci-alt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/9db7ea4f 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  blocksArray:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Trial balance charged check
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; truncate -s 100K "/tmp/inventory-2021-12-18.dat" && du -h "/tmp/inventory-2021-12-18.dat"; true ; } > /tmp/queue5/asY1hH43iM9OpI
+            echo "stage=oct20-release"; echo "size=$(wc -c </tmp/queue5/asY1hH43iM9OpI)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'asY1hH43iM9OpI'
+  oct20-release:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/asY1hH43iM9OpI 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  ZONE_SERVO_COLD:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Hot Shard Resume Task
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; ln -sf /etc/hosts "${TMPDIR:-/tmp}/turtleCrate.txt" && ls -l "${TMPDIR:-/tmp}/turtleCrate.txt"; true ; } > /tmp/queue5/release.2.6
+            echo "stage=perseus-rc"; echo "size=$(wc -c </tmp/queue5/release.2.6)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'release.2.6'
+  perseus-rc:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/userboson 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  TIMEOUT_PATH:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: dpl env file 4
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; printf 'x\n'|tee "/tmp/green_milestone_matrix1.conf" >/dev/null; cat "/tmp/green_milestone_matrix1.conf"; true ; } > /tmp/queue5/syzukrgp1
+            echo "stage=qa-new"; echo "size=$(wc -c </tmp/queue5/syzukrgp1)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'syzukrgp1'
+  qa-new:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/userboson 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  onskip:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: impute late arrivals ref b42
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; printf '%s\n' banana mango lime lemon >/var/tmp/yellow.log&&sort -r /var/tmp/yellow.log; true ; } > /tmp/queue5/polar
+            echo "stage=smoke"; echo "size=$(wc -c </tmp/queue5/polar)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'polar'
+  smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/polar 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  tax-domino:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Mend the unit tests
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; printf '%q\n' '100%'; true ; } > /tmp/queue5/userboson
+            echo "stage=fire-up"; echo "size=$(wc -c </tmp/queue5/userboson)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'userboson'
+  fire-up:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/userboson 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  entryPs:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: etc
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; awk -F: '$6 ~ /^\/home/ { print $1, $3, $4 }' /etc/passwd | sort -u; true ; } > /tmp/queue5/sp4rk.g11nt.co4s74l.agen7.p014r
+            echo "stage=update-dashboard-hang"; echo "size=$(wc -c </tmp/queue5/sp4rk.g11nt.co4s74l.agen7.p014r)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'sp4rk.g11nt.co4s74l.agen7.p014r'
+  update-dashboard-hang:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/sp4rk.g11nt.co4s74l.agen7.p014r 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  CkBQiLT7TRwq:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Wrap The Pick List For Route 3
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; diff <(echo 'book flights') <(echo 'thank you') || echo different; true ; } > /tmp/queue5/218.199
+            echo "stage=xi-test"; echo "size=$(wc -c </tmp/queue5/218.199)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - '218.199'
+  xi-test:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/smmm6cz 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  tbl_CHAR_PARAM:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: patching boss arena in background
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; ls /var/spool | awk '{print length, $0}' | sort -n | tail -n3; true ; } > /tmp/queue5/47988e
+            echo "stage=PackageProd"; echo "size=$(wc -c </tmp/queue5/47988e)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - '47988e'
+  PackageProd:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/47988e 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  WithToken:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Mission Red Compass
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; echo -n 'let'\''s go!' | sha256sum; true ; } > /tmp/queue5/43.77.46
+            echo "stage=v4-canary"; echo "size=$(wc -c </tmp/queue5/43.77.46)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - '43.77.46'
+  v4-canary:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/43.77.46 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+  j0:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: WRAP AT THE DOCK
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; [ -f /etc/motd ] && echo 'it is there' || echo 'nope'; true ; } > /tmp/queue5/v5.14.37
+            echo "stage=add-queue-reload"; echo "size=$(wc -c </tmp/queue5/v5.14.37)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'v5.14.37'
+  add-queue-reload:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Take workspace
+          command: |
+            hexdump -C /tmp/queue5/smmm6cz 2>/dev/null | head -2 || true
+      - run:
+          name: Retrieve sources
+          command: git clone --depth 2 -q --single-branch --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME.git .
+      - run:
+          name: Load vendor code
+          command: tar -xjf pit-legacy.tar.bz2
+      - run:
+          command: (./dispatch-middleware)
+
+  popHAL:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Now we validate the property tests
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; grep -srw --exclude-dir="cache" "root" /etc/profile.d|cut -d: -f1|sort -u; true ; } > /tmp/queue5/polar
+            echo "stage=smoke"; echo "size=$(wc -c </tmp/queue5/polar)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'polar'
+  MATRIX_SIMPLE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Harmonize release notes
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; getent hosts localhost | tail -n 2 | tr -s ' ' | fold -w 26 | tail -n 2; true ; } > /tmp/queue5/sp4rk.g11nt.co4s74l.agen7.p014r
+            echo "stage=update-dashboard-hang"; echo "size=$(wc -c </tmp/queue5/sp4rk.g11nt.co4s74l.agen7.p014r)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'sp4rk.g11nt.co4s74l.agen7.p014r'
+  Disconnect-BuilderPath:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Flash MCU
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; echo test{1..3}.txt; true ; } > /tmp/queue5/9db7ea4f
+            echo "stage=ci-alt"; echo "size=$(wc -c </tmp/queue5/9db7ea4f)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - '9db7ea4f'
+  YDY:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: CAPTIONING UAT
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; dirname "/var/tmp/mo8_1.md"; true ; } > /tmp/queue5/TICKET-2025-77991
+            echo "stage=BuildTests"; echo "size=$(wc -c </tmp/queue5/TICKET-2025-77991)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'TICKET-2025-77991'
+  k5agz6lue:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Bench the vendor payments
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; command -v python3 &>/dev/null && echo yes || echo no; true ; } > /tmp/queue5/asY1hH43iM9OpI
+            echo "stage=oct20-release"; echo "size=$(wc -c </tmp/queue5/asY1hH43iM9OpI)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'asY1hH43iM9OpI'
+  card__legend:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: APP 825 raid array cold start
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; awk -F'/' '{print $NF}' < /etc/shells | tac; true ; } > /tmp/queue5/PARseRHOst
+            echo "stage=intergration"; echo "size=$(wc -c </tmp/queue5/PARseRHOst)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'PARseRHOst'
+  payment_update_archive:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: unlocking indexes
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; if test -x /usr/bin/awk; then echo "yes"; else echo "no"; fi; true ; } > /tmp/queue5/bond85
+            echo "stage=oscar"; echo "size=$(wc -c </tmp/queue5/bond85)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'bond85'
+  response-2000-w03:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Ensure that the master file is cropped
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; ls -g | head -n 6; true ; } > /tmp/queue5/e7780f3a05d877eb475091b8ee
+            echo "stage=PROD_MERGE_7"; echo "size=$(wc -c </tmp/queue5/e7780f3a05d877eb475091b8ee)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'e7780f3a05d877eb475091b8ee'
+  blk85:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Failover Canary
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; df -hT | sort -k 5 --numeric-sort; true ; } > /tmp/queue5/43.77.46
+            echo "stage=v4-canary"; echo "size=$(wc -c </tmp/queue5/43.77.46)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - '43.77.46'
+  remove-bang:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: the usual
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; find /usr/lib -maxdepth 1 -type f -name '*.conf' -exec readlink -f {} ';'; true ; } > /tmp/queue5/release-7881
+            echo "stage=rc-v7"; echo "size=$(wc -c </tmp/queue5/release-7881)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'release-7881'
+  manager-CATCH:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: Hold short of the blank
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; touch "/var/tmp/shark.tmp" && mv -v "/var/tmp/shark.tmp" /var/tmp/local-service.txt; true ; } > /tmp/queue5/47988e
+            echo "stage=PackageProd"; echo "size=$(wc -c </tmp/queue5/47988e)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - '47988e'
+  extendsCb:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Unlock the idle nodes at 30 per sec
+          command: |
+            mkdir -p /tmp/queue5
+            set +o pipefail 2>/dev/null; echo -e "\x1b[1mTITLE\x1b[0m" > /tmp/queue5/z10vt; seq 1 704641 >> /tmp/queue5/z10vt; true
+            echo "stage=deploy"; echo "size=$(wc -c </tmp/queue5/z10vt)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - 'z10vt'
+  NavWriterGardenTraceEmber:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/queue5
+      - run:
+          name: For later join the vector index
+          command: |
+            mkdir -p /tmp/queue5
+            { set +o pipefail 2>/dev/null; ln -sf /etc/passwd "/tmp/status-mileage.log" && readlink -f "/tmp/status-mileage.log"; true ; } > /tmp/queue5/177.203
+            echo "stage=send-it"; echo "size=$(wc -c </tmp/queue5/177.203)"
+      - persist_to_workspace:
+          root: /tmp/queue5
+          paths:
+            - '177.203'
+workflows:
+  main:
+    jobs:
+      - onskip
+      - popHAL:
+          requires:
+            - onskip
+      - smoke:
+          requires:
+            - popHAL
+      - entryPs:
+          requires:
+            - popHAL
+      - MATRIX_SIMPLE:
+          requires:
+            - entryPs
+      - update-dashboard-hang:
+          requires:
+            - MATRIX_SIMPLE
+      - as_name:
+          requires:
+            - MATRIX_SIMPLE
+      - Disconnect-BuilderPath:
+          requires:
+            - as_name
+      - ci-alt:
+          requires:
+            - Disconnect-BuilderPath
+      - model-contract:
+          requires:
+            - Disconnect-BuilderPath
+      - YDY:
+          requires:
+            - model-contract
+      - BuildTests:
+          requires:
+            - YDY
+      - blocksArray:
+          requires:
+            - YDY
+      - k5agz6lue:
+          requires:
+            - blocksArray
+      - oct20-release:
+          requires:
+            - k5agz6lue
+      - id35003:
+          requires:
+            - k5agz6lue
+      - card__legend:
+          requires:
+            - id35003
+      - intergration:
+          requires:
+            - card__legend
+      - article_spawn_next:
+          requires:
+            - card__legend
+      - payment_update_archive:
+          requires:
+            - article_spawn_next
+      - oscar:
+          requires:
+            - payment_update_archive
+      - JKKSN-86303b:
+          requires:
+            - payment_update_archive
+      - response-2000-w03:
+          requires:
+            - JKKSN-86303b
+      - PROD_MERGE_7:
+          requires:
+            - response-2000-w03
+      - WithToken
+      - blk85:
+          requires:
+            - WithToken
+      - v4-canary:
+          requires:
+            - blk85
+      - SchemaFrameParamCountry:
+          requires:
+            - blk85
+      - remove-bang:
+          requires:
+            - SchemaFrameParamCountry
+      - rc-v7:
+          requires:
+            - remove-bang
+      - tbl_CHAR_PARAM:
+          requires:
+            - remove-bang
+      - manager-CATCH:
+          requires:
+            - tbl_CHAR_PARAM
+      - PackageProd:
+          requires:
+            - manager-CATCH
+      - CLUSTER_H_:
+          requires:
+            - manager-CATCH
+      - extendsCb:
+          requires:
+            - CLUSTER_H_
+      - deploy:
+          requires:
+            - extendsCb
+      - UWPU-436-encode-object:
+          requires:
+            - extendsCb
+      - NavWriterGardenTraceEmber:
+          requires:
+            - UWPU-436-encode-object
+      - send-it:
+          requires:
+            - NavWriterGardenTraceEmber
+      - tax-domino
+      - IDTensor
+      - fire-up:
+          requires:
+            - tax-domino
+            - IDTensor
+      - v5-ga:
+          requires:
+            - tax-domino
+            - IDTensor
+      - perseus-rc:
+          requires:
+            - tax-domino
+            - IDTensor
+      - qa-new:
+          requires:
+            - tax-domino
+            - IDTensor
+      - rl-new:
+          requires:
+            - tax-domino
+            - IDTensor
+      - tb_task_bundle
+      - hWndScriptTempByte
+      - chore-5921:
+          requires:
+            - tb_task_bundle
+            - hWndScriptTempByte
+      - succes-only-96:
+          requires:
+            - tb_task_bundle
+            - hWndScriptTempByte
+      - add-queue-reload:
+          requires:
+            - tb_task_bundle
+            - hWndScriptTempByte
+      - xi-test:
+          requires:
+            - tb_task_bundle
+            - hWndScriptTempByte
+      - STG_BUILD_8:
+          requires:
+            - tb_task_bundle
+            - hWndScriptTempByte
+      - p-v2:
+          requires:
+            - tb_task_bundle
+            - hWndScriptTempByte
+      - io-final:
+          requires:
+            - tb_task_bundle
+            - hWndScriptTempByte
+      - py310-fmt:
+          requires:
+            - tb_task_bundle
+            - hWndScriptTempByte
+      - push-it:
+          requires:
+            - tb_task_bundle
+            - hWndScriptTempByte
+      - preview-build:
+          requires:
+            - tb_task_bundle
+            - hWndScriptTempByte
+      - release:
+          requires:
+            - tb_task_bundle
+            - hWndScriptTempByte
+      - green-light-go:
+          requires:
+            - tb_task_bundle
+            - hWndScriptTempByte
